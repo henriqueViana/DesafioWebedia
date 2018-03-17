@@ -1,0 +1,24 @@
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bgMenuMobile {
+    display: none;
+}
+
+.bgMenuMobile.open {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block !important;
+    background: rgba(0,0,0,.5);
+    z-index: 1000;
+}
