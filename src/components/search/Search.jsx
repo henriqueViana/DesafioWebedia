@@ -10,7 +10,7 @@ export default props => {
         <div className="search">
             <img className="search__icon" src={search} alt="Botão search" onClick={props.openSearch}/>
             <div class={`search__boxInput ${open}`}>
-                <input type="text" class="search__input" placeholder="Pesquisa"/>
+                <input type="text" className="search__input" placeholder="Pesquisa"/>
                 <button className="search__close" onClick={props.closeSearch}>X</button>    
             </div>
         </div>
