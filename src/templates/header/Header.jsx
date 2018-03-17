@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MediaQuery from 'react-responsive';
 import Hamburger from '../../components/hamburger/Hamburger';
 import Logo from '../../components/logo/Logo';
+import Menu from '../menu/Menu';
 import './header.css';
 
 
@@ -14,6 +15,7 @@ class Header extends Component {
                     <div className="header__mobile">
                         <Hamburger />
                         <Logo />
+                        <Menu />
                     </div>
                 </MediaQuery>
 
