@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+import './links.css';
 
 export default props => (
     <ul class="menu__list">
-        <li className="menu__item"><Link to="/noticias-em-destaque">Notícias em destaque</Link></li>
-        <li className="menu__item"><Link to="/noticias-do-brasil">Notícias do Brasil</Link></li>
-        <li className="menu__item"><Link to="/noticias-do-eua">Notícias do EUA</Link></li>
-        <li className="menu__item"><Link to="/noticias-da-argentina">Notícias da Argentina</Link></li>
-        <li className="menu__item menu__item--last"><Link to="/noticias-da-franca">Notícias em França</Link></li>
+        <NavLink to="/noticias-em-destaque" activeClassName="active"><li className="menu__item" onClick={props.closeMenu}>Notícias em destaque</li></NavLink>
+        <NavLink to="/noticias-do-brasil" activeClassName="active"><li className="menu__item" onClick={props.closeMenu}>Notícias do Brasil</li></NavLink>
+        <NavLink to="/noticias-do-eua" activeClassName="active"><li className="menu__item" onClick={props.closeMenu}>Notícias do EUA</li></NavLink>
+        <NavLink to="/noticias-da-argentina" activeClassName="active"><li className="menu__item" onClick={props.closeMenu}>Notícias da Argentina</li></NavLink>
+        <NavLink to="/noticias-da-franca" activeClassName="active"><li className="menu__item menu__item--last" onClick={props.closeMenu}>Notícias em França</li></NavLink>
     </ul>
 );

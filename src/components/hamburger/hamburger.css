@@ -1,5 +1,6 @@
 .hamburguer {
     width: 30px;
+    height: 30px;
     padding: 5px;
     background: #999;
     cursor: pointer;
