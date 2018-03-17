@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import Header from './templates/header/Header';
+import Header from '../../templates/header/Header';
 
-class App extends Component {
+class TopNews extends Component {
+
     render() {
         return (
-            <div className="App">
+            <div>
                 <Header />
             </div>
         );
     }
 }
 
-export default App;
+export default TopNews;

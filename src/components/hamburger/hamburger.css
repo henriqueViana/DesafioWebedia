@@ -1,0 +1,17 @@
+.hamburguer {
+    width: 20px;
+    padding: 5px;
+    background: #999;
+    cursor: pointer;
+} 
+
+.hamburguer__bar {
+    border: 1px solid black;
+    border-radius: 50px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.hamburguer__bar--last {
+    margin-bottom: 0;
+}
