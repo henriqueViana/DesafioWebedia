@@ -5,7 +5,17 @@
     margin-bottom: 20px;
     text-align: center;
     overflow: hidden;
+    transition: box-shadow .2s ease-in-out;
 }
+
+.cardNews:hover {
+    box-shadow: 0px 0px 15px #666;
+}
+
+.cardNews__link {
+    text-decoration: none;
+}
+
 .cardNews__boxImage {
     display: block;
     width: 100%;
