@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import CardNews from '../../templates/cardNews/CardNews';
 
 const URL = 'https://newsapi.org/v2';
 const APIKEY = '522990a48dc7422384ce014a0b36a341';
@@ -25,9 +26,18 @@ class TopNews extends Component {
 
     render() {
         return (
-            <div className="news">
+            <div className="news container">
                 {this.state.news.map((news, index) => {
-                    return <div news={index + 1}>{news.author ? news.author : 'Desconhecido'}</div>
+                    return <CardNews 
+                            author={news.author} 
+                            title={news.title}
+                            description={news.description} 
+                            date={news.publishedAt}
+                            url={news.url}
+                            urlImage={news.urlToImage}
+                            />
+
+                    // return <div news={index + 1}>{news.author ? news.author : 'Desconhecido'}</div>
                 })}
             </div>
         );
