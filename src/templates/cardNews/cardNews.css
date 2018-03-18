@@ -1,0 +1,21 @@
+@media(max-width: 480px) {
+    .cardNews {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        overflow: hidden;
+    }
+    .cardNews__boxImage {
+        display: block;
+        width: 100%;
+        height: 280px;
+        background-color: #8c8c8c;
+    }
+    .cardNews__image {
+        width: 100%;
+        height: auto;
+    }
+}
+
