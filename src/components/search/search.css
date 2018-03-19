@@ -37,8 +37,15 @@
     border-radius: 50%;
     background-color: #fff;
     border: none;  
-    font-size: 35px;
+    font-size: 25px;
     line-height: 50px;
     box-sizing: border-box;
     cursor: pointer;
+}
+
+@media(min-width: 640px) { 
+    .search {
+        float: right;
+        margin-right: 20px;
+    }
 }

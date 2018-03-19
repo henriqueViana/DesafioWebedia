@@ -43,8 +43,8 @@ class Header extends Component {
                 <div className={`bgMenuMobile ${open}`}></div>
                 <Hamburger openMenu={this.openMenu}/>
                 <Logo />
-                <Menu closeMenu={this.closeMenu} isOpen={this.state.openMenu}/>
                 <Search openSearch={this.openSearch} closeSearch={this.closeSearch} isOpenSearch={this.state.openSearch}/>
+                <Menu closeMenu={this.closeMenu} isOpen={this.state.openMenu}/>
             </header>
         );
     }
