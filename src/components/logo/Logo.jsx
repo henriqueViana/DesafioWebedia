@@ -4,7 +4,7 @@ import logo from '../../assets/images/logo.png';
 import './logo.css';
 
 export default props => (
-    <Link to="/">
+    <Link to="/" className="link-logo">
         <img className="logo" src={logo} alt="Logo Webedia"/>
     </Link>
 );

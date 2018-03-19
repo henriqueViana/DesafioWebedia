@@ -2,9 +2,9 @@ import React from 'react';
 import './hamburger.css';
 
 export default props => (
-    <div className="hamburguer" onClick={props.openMenu}>
-        <span className="hamburguer__bar"></span>
-        <span className="hamburguer__bar"></span>
-        <span className="hamburguer__bar hamburguer__bar--last"></span>
+    <div className="hamburger" onClick={props.openMenu}>
+        <span className="hamburger__bar"></span>
+        <span className="hamburger__bar"></span>
+        <span className="hamburger__bar hamburger__bar--last"></span>
     </div>
 );
