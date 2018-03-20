@@ -1,0 +1,7 @@
+.pagination__menu {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #7ca3d2;
+    cursor: pointer;
+}

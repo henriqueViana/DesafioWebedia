@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { openSearch, closeSearch } from '../../actions/mobileButtonsActions';
+
 import search from '../../assets/images/search.png';
 import './search.css';
 
-export default props => {
+class Search extends Component {
 
-    let open = props.isOpenSearch ? 'open' : '';
-
-    return (
-        <div className="search">
-            <img className="search__icon" src={search} alt="Botão search" onClick={props.openSearch}/>
-            <div class={`search__boxInput ${open}`}>
-                <input type="text" className="search__input shadow" placeholder="Pesquisa"/>
-                <button className="search__close shadow" onClick={props.closeSearch}>X</button>    
+    render() {
+        return (
+            <div className="search">
+                <img className="search__icon" src={search} alt="Botão search" onClick={this.props.openSearch}/>
+                <div class={`search__boxInput ${this.props.openSearchProp}`}>
+                    <input type="text" className="search__input shadow" placeholder="Pesquisa"/>
+                    <button className="search__close shadow" onClick={this.props.closeSearch}>X</button>    
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
+
+const mapStateToPros = state => ({ openSearchProp: state.mobileButtons.open_search});
+const mapDispatchToProps = dispatch => (bindActionCreators({ openSearch, closeSearch }, dispatch));
+
+export default connect(mapStateToPros, mapDispatchToProps)(Search); 
