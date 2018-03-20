@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { closeMenu } from '../../actions/mobileButtonsActions';
+
 import Links from '../../components/links/Links';
 import './menu.css';
 
-export default props => {
+class Menu extends Component {
 
-    let open = props.isOpen ? 'open' : '';
-
-    return (
-        <nav className={`menu ${open}`}>
-            <Links closeMenu={props.closeMenu}/>
-            <button className="menu__close" onClick={props.closeMenu}>X</button>          
-        </nav>
-    );
+    render() {
+        return (
+            <nav className={`menu ${this.props.openMenuProp}`}>
+                <Links />
+                <button className="menu__close" onClick={this.props.closeMenu}>X</button>          
+            </nav>
+        );
+    }
 }
+
+const mapStateToProps = state => ({ openMenuProp: state.mobileButtons.open_menu });
+const mapDispatchToProps = dispatch => (bindActionCreators({ closeMenu }, dispatch));
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

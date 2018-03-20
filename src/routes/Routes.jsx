@@ -1,15 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Header from '../templates/header/Header';
-import TopNews from '../pages/topNews/TopNews';
+import News from '../pages/news/News';
 
 export default props => (
     <BrowserRouter>
         <Switch>
-            <div className="wrapper">
-                <Header />
-                <Route path='/' component={TopNews} />
-            </div>
+            <Route exact path='/' component={News} />
+            <Route exact path='/noticias/:id' component={News} />
         </Switch>
     </BrowserRouter>
 );
