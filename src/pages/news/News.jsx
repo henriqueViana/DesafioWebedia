@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import { requestNews } from '../../actions/newsActions';
+
 import CardNews from '../../templates/cardNews/CardNews';
 import Header from '../../templates/header/Header';
-
-const URL = 'https://newsapi.org/v2';
-const APIKEY = '522990a48dc7422384ce014a0b36a341';
-const LIMIT = 7;
 
 class News extends Component {
 
@@ -19,15 +16,7 @@ class News extends Component {
     }
 
     componentWillMount() {
-
-        let country = this.getActiveCountry();
-
-        axios.get(`${URL}/top-headlines?country=${country}&pageSize=${LIMIT}&apikey=${APIKEY}`)
-            .then(res => {
-                if(res.status === 200) {
-                    this.setState({...this.state, news: res.data.articles, totalResult: res.data.totalResult})
-                }
-            });
+        this.props.requestNews();
     }
 
     getActiveCountry() {
@@ -35,12 +24,12 @@ class News extends Component {
     }
 
     render() {
-        console.log(this.props.requestData);
+        if(this.props.requestData.length === 0) return (<div>Não há notícias</div>);
         return (
             <div className="wrapper">
                 <Header />
                 <div className="news container">
-                    {this.state.news.map((news, index) => {
+                    {this.props.requestData.articles.map((news, index) => {
 
                         let limited_title = '';
                         let limited_description = '';
@@ -55,9 +44,10 @@ class News extends Component {
                             limited_description = (index < 2 || index > 4) ? `${news.description.substr(0,140)} ...` : `${news.description.substr(0,60)} ...`;
                         }
 
-                        return <div class={`columns${col_number}`}>
+                        return <div className={`columns${col_number}`}>
 
                                     <CardNews 
+                                        key={news._id}
                                         author={news.author} 
                                         title={limited_title}
                                         description={limited_description} 
@@ -70,7 +60,7 @@ class News extends Component {
                     })}
                 </div>
 
-                <div class="pagination">
+                <div className="pagination">
                     
                 </div>
             </div>
@@ -79,5 +69,6 @@ class News extends Component {
 }
 
 const mapStateToPros = state => ({ requestData: state.newsReducers.request_news});
+const mapDispatchToProps = dispatch => bindActionCreators({requestNews}, dispatch);
 
-export default connect(mapStateToPros)(News); 
+export default connect(mapStateToPros, mapDispatchToProps)(News); 

@@ -4,7 +4,7 @@ import newsReducers from './newsReducers';
 
 const reducers = combineReducers({
     mobileButtons: mobileButtonsReducers ,
-    newsReducers: newsReducers
+    newsReducers: newsReducers,
 });
   
 export default reducers;

@@ -1,4 +1,8 @@
 .search {
+    display: none;
+}
+
+.search-mobile {
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -44,8 +48,27 @@
 }
 
 @media(min-width: 640px) { 
+    .search-mobile {
+        display: none;
+    }
+
     .search {
+        display: block;
+        position: relative;
+    }
+
+    .search__input {
+        width: 250px;
         float: right;
-        margin-right: 20px;
+        top: 0;
+        border-radius: 25px;
+    }
+
+    .search__icon--desktop {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 13px;
+        right: 35px;
     }
 }

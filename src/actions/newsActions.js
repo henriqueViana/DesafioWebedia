@@ -1,24 +1,33 @@
 import axios from 'axios';
 
-const URL = 'https://newsapi.org/v2';
-const APIKEY = '522990a48dc7422384ce014a0b36a341';
-const LIMIT = 7;
-
-let country = '';
+export const URL = 'https://newsapi.org/v2';
+export const APIKEY = '522990a48dc7422384ce014a0b36a341';
+export const LIMIT = 7;
 
 export const REQUEST_NEWS = 'REQUEST_NEWS';
+export const CHANGE_SEARCHED = 'CHANGE_SEARCHED';
 
-export const requestNews = () => {
+export const requestNews = (searched) => {
 
-    country = window.location.href.split('/').slice(-1)[0] ? window.location.href.split('/').slice(-1)[0] : 'us'
-   
-    return dispatch => {
-        axios.get(`${URL}/top-headlines?country=${country}&pageSize=${LIMIT}&apikey=${APIKEY}`)
-            .then(res => {
-                console.log(res);
-                if(res.status === 200) {
-                    return {type: REQUEST_NEWS, payload: res.data}
-                }
-            });
+    const search = searched ? `&q=${searched}` : '';
+    const country = window.location.href.split('/').slice(-1)[0] ? window.location.href.split('/').slice(-1)[0] : 'us'
+    
+    let result = axios.get(`${URL}/top-headlines?country=${country}&pageSize=${LIMIT}${search}&apikey=${APIKEY}`)
+    
+    return {
+        type: REQUEST_NEWS,
+        payload: result
     }
 }
+
+export const routerChanged = () => {
+    return dispatch => {
+        dispatch(requestNews());
+    }
+}
+
+export const changeSearched = event => ({
+    type: CHANGE_SEARCHED ,
+    payload: event.target.value
+});
+
