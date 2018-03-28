@@ -18,6 +18,14 @@ Run the command below to install the depencencies
 npm install
 ```
 
+### Develop
+
+Run the command below to started application in develop mode
+
+```
+npm start
+```
+
 ### Build
 
 Run the command below to generate the files for production
