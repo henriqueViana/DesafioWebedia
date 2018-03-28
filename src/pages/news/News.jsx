@@ -36,7 +36,19 @@ class News extends Component {
         return { title, description };
     }
 
+    configTotalPage(totalResults) {
+        let result = Math.round(totalResults / 7);
+
+        if(result > 100) result = 100;
+        if(result < 5) result = 5
+
+        return result;
+    }
+    
+
     render() {
+        let totalPages = this.configTotalPage(this.props.requestData.totalResults);
+
         if(this.props.requestData.length === 0) {
             return (
                 <div className="wrapper">
@@ -71,10 +83,10 @@ class News extends Component {
 
                 <div className="pagination">
                     <Pagination page="1"/>
-                    <Pagination page={this.props.activePage <= 2 ? 2 : this.props.activePage - 1}/>
-                    <Pagination page={this.props.activePage <= 2 ? 3 : this.props.activePage}/>
-                    <Pagination page={this.props.activePage <= 2 ? 4 : this.props.activePage + 1}/>
-                    <Pagination page="20"/>
+                    <Pagination page={this.props.activePage <= 2 ? 2 : (this.props.activePage === totalPages) ? totalPages - 3 : this.props.activePage - 1}/>
+                    <Pagination page={this.props.activePage <= 2 ? 3 : (this.props.activePage === totalPages - 1 || this.props.activePage === totalPages) ? totalPages - 2 : this.props.activePage}/>
+                    <Pagination page={this.props.activePage <= 2 ? 4 : (this.props.activePage === totalPages - 1 || this.props.activePage === totalPages) ? totalPages - 1 : this.props.activePage + 1}/>
+                    <Pagination page={totalPages}/>
                 </div>
 
                 <Footer />
