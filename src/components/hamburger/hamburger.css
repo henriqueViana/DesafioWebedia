@@ -1,0 +1,22 @@
+.hamburger {
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+} 
+
+.hamburger__bar {
+    border: 2px solid black;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.hamburger__bar--last {
+    margin-bottom: 0;
+}
+
+@media(min-width: 640px) {
+    .hamburger {
+        display: none;
+    }
+}
