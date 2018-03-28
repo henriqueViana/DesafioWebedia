@@ -1,0 +1,16 @@
+.news {
+    padding-top: 100px;
+}
+
+.notNews {
+    text-align: center;
+    padding-top: 100px;
+    font-style: italic;
+    color: #990000;
+}
+
+@media(min-width: 640px) {
+    .news {
+        padding-top: 0;
+    }
+}

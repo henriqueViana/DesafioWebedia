@@ -1,8 +1,4 @@
-export const OPEN_MENU = 'OPEN_MENU'; 
-export const CLOSE_MENU = 'CLOSE_MENU'; 
-
-export const OPEN_SEARCH = 'OPEN_SEARCH';
-export const CLOSE_SEARCH = 'CLOSE_SEARCH';
+import { OPEN_MENU, CLOSE_MENU, OPEN_SEARCH, CLOSE_SEARCH } from '../helpers/constants';
 
 export const openMenu = () => ({
     type: OPEN_MENU

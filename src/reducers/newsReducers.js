@@ -1,6 +1,6 @@
-import { REQUEST_NEWS, CHANGE_SEARCHED } from '../actions/newsActions';
+import { REQUEST_NEWS, CHANGE_SEARCHED, CHANGE_PAGINATION, RESET_PAGINATION } from '../helpers/constants';
 
-const INITIAL_STATE = { searched: '', request_news: [] }
+const INITIAL_STATE = { searched: '', request_news: [], activePage: 1 }
 
 export default (state = INITIAL_STATE, action) => { 
 
@@ -10,6 +10,12 @@ export default (state = INITIAL_STATE, action) => {
 
         case CHANGE_SEARCHED:
             return {...state, searched: action.payload}
+
+        case CHANGE_PAGINATION:
+            return {...state, activePage: action.activePage}
+            
+        case RESET_PAGINATION:
+            return {...state, activePage: 1}
 
         default:
             return state;

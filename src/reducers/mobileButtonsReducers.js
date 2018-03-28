@@ -1,4 +1,4 @@
-import { OPEN_MENU, CLOSE_MENU, OPEN_SEARCH, CLOSE_SEARCH } from '../actions/mobileButtonsActions';
+import { OPEN_MENU, CLOSE_MENU, OPEN_SEARCH, CLOSE_SEARCH } from '../helpers/constants';
 
 const INITIAL_STATE = { open_menu: '', open_search: '' }
 

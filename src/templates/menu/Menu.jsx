@@ -11,7 +11,7 @@ class Menu extends Component {
 
     render() {
         return (
-            <nav className={`menu ${this.props.openMenuProp}`}>
+            <nav className={`menu shadow ${this.props.openMenuProp}`}>
                 <Navigation />
                 <button className="menu__close" onClick={this.props.closeMenu}>X</button>          
             </nav>

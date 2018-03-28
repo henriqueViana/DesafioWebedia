@@ -17,8 +17,8 @@ class Search extends Component {
     }
 
     keyHandler() {
-        let country = window.location.href.split('/').slice(-1)[0];
-        this.props.requestNews(this.props.searched, country);
+        let path = window.location.href.split('/').slice(-1)[0];
+        this.props.requestNews(this.props.searched, path);
     }
 
     render() {

@@ -7,7 +7,7 @@ export default props => {
     let date = DateHelper.convertStringToDataBR(props.date);
 
     return (
-        <a href={props.url} className="cardNews__link" index={props.index} target="_blank" key={props.key}>
+        <a href={props.url} className="cardNews__link" index={props.index} target="" key={props.key}>
             <section className="cardNews shadow">
                 <article>
                     <span className="cardNews__boxImage">

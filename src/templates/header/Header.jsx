@@ -15,7 +15,7 @@ class Header extends Component {
             <header className="header">
                 <div className={`bgMenuMobile ${this.props.openMenu}`}></div>
                 <Hamburger />
-                <Logo />
+                <Logo path='/'/>
                 <Search />
                 <Menu />
             </header>
