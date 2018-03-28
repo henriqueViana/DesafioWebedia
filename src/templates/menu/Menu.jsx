@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import { closeMenu } from '../../actions/mobileButtonsActions';
 
-import Links from '../../components/links/Links';
+import Navigation from '../../components/navigation/Navigation';
 import './menu.css';
 
 class Menu extends Component {
@@ -12,7 +12,7 @@ class Menu extends Component {
     render() {
         return (
             <nav className={`menu ${this.props.openMenuProp}`}>
-                <Links />
+                <Navigation />
                 <button className="menu__close" onClick={this.props.closeMenu}>X</button>          
             </nav>
         );

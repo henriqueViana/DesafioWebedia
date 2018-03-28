@@ -9,18 +9,8 @@ import Header from '../../templates/header/Header';
 
 class News extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = { news: [], totalResult: 0 };
-    }
-
     componentWillMount() {
-        this.props.requestNews();
-    }
-
-    getActiveCountry() {
-        return this.props.match.params.id ? this.props.match.params.id : 'us';
+        this.props.requestNews('','destaques');
     }
 
     render() {

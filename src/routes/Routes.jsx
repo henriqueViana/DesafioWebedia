@@ -6,8 +6,7 @@ import News from '../pages/news/News';
 export default props => (
     <BrowserRouter>
         <Switch>
-            <Route exact path='/' render={() => <Redirect to="/noticias/us"/>} />
-            <Route exact path='/noticias' component={News} />
+            <Route exact path='/' render={() => <Redirect to="/noticias/destaques"/>} />
             <Route exact path='/noticias/:id' component={News} />
         </Switch>
     </BrowserRouter>

@@ -27,9 +27,18 @@
 
     .menu__link {
         font-size: 14px;
+        line-height: 18px;
+        margin-top: 15px;
+        text-align: center;
     }
 
     .menu__item {
         border: none;
+    }
+}
+
+@media(min-width: 820px) { 
+    .menu__link { 
+        margin-top: 22px;
     }
 }
